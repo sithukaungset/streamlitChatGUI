@@ -89,7 +89,6 @@ def generate_response(prompt):
                 ]
             )
 
-    response = llm.add(prompt=prompt, max_tokens=50)
 
     st.markdown(
                 f'### Answer: \n {response["choices"][0]["message"]["content"]}', unsafe_allow_html=True)
