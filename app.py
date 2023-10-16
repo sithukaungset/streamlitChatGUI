@@ -91,7 +91,8 @@ def generate_response(prompt):
 
     response = llm.add(prompt=prompt, max_tokens=50)
 
-    st.session_state['messages'].append({"role": "assistant", "content": response})
+    st.markdown(
+                f'### Answer: \n {response["choices"][0]["message"]["content"]}', unsafe_allow_html=True)
 
     print(st.session_state['messages'])
     total_tokens = completion.usage.total_tokens
